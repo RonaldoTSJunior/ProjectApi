@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>CHAT GEMINI 2.5 FLASH</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        #chat-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        .message {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 8px;
+            max-width: 70%;
+            clear: both;
+        }
+
+        .user {
+            background-color: #d1e7dd;
+            float: right;
+            text-align: right;
+        }
+
+        .gemini {
+            background-color: #ffe5b4;
+            float: left;
+            text-align: left;
+        }
+
+        #input-box {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CHAT GEMINI 2.5 FLASH</h1>
+
+    <div id="chat-box">
+        <!-- As mensagens vão aparecer aqui -->
+    </div>
+
+    <div id="input-box">
+        <input type="text" id="user-input" placeholder="Digite sua mensagem..." style="width:70%;">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+
+    <script>
+        function addMessage(text, sender) {
+            const chatBox = document.getElementById('chat-box');
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('message', sender);
+            msgDiv.textContent = text;
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight; // rolar para baixo
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            addMessage(message, 'user'); // mostra sua mensagem
+
+            fetch('/chat', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({message})
+            })
+            .then(res => res.json())
+            .then(data => {
+                addMessage(data.response, 'gemini'); // mostra resposta do Gemini
+            })
+            .catch(err => {
+                addMessage("Erro ao conectar com o Gemini.", 'gemini');
+                console.error(err);
+            });
+
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
