@@ -1,0 +1,42 @@
+# Projeto Chat Interativo com Flask e Gemini API
+
+Este projeto implementa um chat interativo em Python utilizando o **Flask** para o back-end e páginas **HTML/CSS/JS** para o front-end.  
+O objetivo é permitir a comunicação com a API do Gemini (ou outro modelo de linguagem compatível), através de uma interface simples no navegador.
+
+---
+
+## Estrutura do Projeto
+
+A pasta `N1` contém:
+
+- `app.py` → Arquivo principal do Flask (servidor back-end)
+- `templates/` → Páginas HTML renderizadas pelo Flask
+- `static/` → Arquivos estáticos (CSS, imagens, JavaScript)
+- `requirements.txt` → Lista de dependências do projeto
+
+---
+
+## Como funciona
+
+1. O usuário acessa a aplicação pelo navegador em `http://127.0.0.1:5000/`.
+2. O Flask renderiza a página HTML inicial (menu de chat).
+3. Ao enviar uma mensagem pelo formulário, o front-end envia a requisição para o back-end.
+4. O back-end processa a entrada, chama a API do Gemini e retorna a resposta.
+5. A resposta é exibida na interface web.
+
+---
+
+## Requisitos
+
+- Python 3.9 ou superior
+- Pip (gerenciador de pacotes)
+
+Dependências principais:
+- Flask
+- Requests (ou httpx, conforme implementação)
+- Biblioteca do Gemini API (quando aplicável)
+
+Instale tudo com:
+
+```bash
+pip install -r requirements.txt
