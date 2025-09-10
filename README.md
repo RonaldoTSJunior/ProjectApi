@@ -6,15 +6,15 @@ O sistema permite enviar mensagens e receber respostas da API Gemini, servindo c
 
 Tecnologias utilizadas
 
-Python 3.12
+*Python 3.12
 
-Flask
+*Flask
 
-HTML / CSS / JavaScript
+*HTML / CSS / JavaScript
 
-API Gemini
+*API Gemini
 
-PyInstaller (opcional, para gerar executável)
+*PyInstaller (opcional, para gerar executável)
 
 Estrutura do projeto
 N1/
@@ -23,49 +23,66 @@ N1/
 │── templates/           # Arquivos HTML
 │── static/              # Arquivos CSS e JS
 
-Como executar
 
-Clone este repositório:
+
+Como executar:
+
+-> Clone este repositório:
 
 git clone https://github.com/RonaldoTSJunior/nome-do-repositorio.git
 
 
-Acesse a pasta do projeto:
+
+
+-> Acesse a pasta do projeto:
 
 cd nome-do-repositorio/N1
 
 
-Crie um ambiente virtual (opcional):
+
+-> Crie um ambiente virtual (opcional):
 
 python -m venv .venv
 .venv\Scripts\activate      # Windows
 source .venv/bin/activate   # Linux/Mac
 
 
-Instale as dependências:
+
+-> Instale as dependências:
 
 pip install -r requirements.txt
 
 
-Configure a variável de ambiente com a chave da API Gemini:
+
+-> Configure a variável de ambiente com a chave da API Gemini:
 
 set GEMINI_API_KEY="sua_chave_aqui"      # Windows
 export GEMINI_API_KEY="sua_chave_aqui"   # Linux/Mac
 
 
-Execute a aplicação:
+
+-> Execute a aplicação:
 
 python app.py
 
 
-Acesse no navegador:
+
+-> Acesse no navegador:
 
 http://127.0.0.1:5000/
 
-Próximos passos
+
+
+-> Próximos passos
 
 Melhorar a interface visual
 
 Implementar histórico de mensagens
 
 Realizar deploy em serviço de hospedagem compatível com Flask
+
+
+-> Aprendizado:
+
+Com este projeto coloquei em prática o que estava estudando em python, juntamente com diversos novos aprendizados para conseguir integrar tudo! Principalmente utilizando a IA em modo estudos, sempre solicitando para explicar o passo a passo e não pulando direto para a resposta final.
+Comecei meu aprendizado com flask, e aprofundei um pouco mais HTML/CSS/JS para montar o visual do chat! Projeto também visa me aproximar de integrações com API, que hoje moldam nosso cotidiano.
